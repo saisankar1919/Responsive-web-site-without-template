@@ -221,7 +221,7 @@
           </div> 
           <div class="col pull-left"> <button class="btn btn-success mt-2 px-5" style="color: black;background-color: lightseagreen;">Send Message</button> </div>
         </form>
-        <div class="row align-items-center" style="text-align: center; padding-top: 2cm;">
+        <div class=" more-contact row align-items-center" style="text-align: center; padding-top: 2cm;">
           <div class="col-12 col-md-4">
             <h3 class="contact-head">Where to find me </h3>
             <p style="font-family: Aleo;"><span>Saisadanam,</span>
@@ -261,23 +261,7 @@
     
 
     <script>
-      $("#submit-form").submit((e)=>{
-          e.preventDefault()
-          $.ajax({
-              url:"https://script.google.com/macros/s/AKfycbzZ5LI8_L_29IE3YjtEKvNaA0AikJq64XR1Id1VvdVMjX9ATQJp9NSD6MUVIUmj8N5Z/exec",
-              data:$("#submit-form").serialize(),
-              method:"post",
-              success:function (response){
-                  alert("Form submitted successfully")
-                  window.location.reload()
-                  //window.location.href="https://google.com"
-              },
-              error:function (err){
-                  alert("Something Error")
-  
-              }
-          })
-      })
+      
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </div>
