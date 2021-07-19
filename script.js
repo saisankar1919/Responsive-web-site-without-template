@@ -1,36 +1,38 @@
-var firstnamestatus, lastnamestatus,emailstatus,phonestatus,messagestatus;
+
 function firstnamevalid() {
     var name = document.getElementById("fname").value
-    var nameerror = document.getElementById("firstnameerror");
-    var letters = /^[a-zA-Z-()\s]*$/;
-    if (name == "" || name ==null) {
-        nameerror.innerHTML = "Field is required...!!!"
-        firstnamestatus = false;
+    
+    var letters = /^[-a-zA-Z-()]+(\s+[-a-zA-Z-()]+)*$/;
+    if (name == "") {
+        document.getElementById("firstnameerror").innerHTML = "This field is required"
+        
+        return false;
     }
-    else if (name.match(letters)) {
-        nameerror.innerHTML = "";
-        firstnamestatus = true;
+    else if (letters.test(name)) {
+        document.getElementById("firstnameerror").innerHTML = ""
+        return true;
     }
     else {
-        nameerror.innerHTML = "Name is invalid...!!!";
-        firstnamestatus = false;
+        document.getElementById("firstnameerror").innerHTML = "This field is required"
+       return false;
     }
 }
 function lastnamevalid() {
-    var name = document.getElementById("lname").value
-    var nameerror = document.getElementById("lastnameerror");
-    var letters = /^[a-zA-Z\s]*$/;
-    if (name == "" || name == null) {
-        nameerror.innerHTML = "Field is required...!!!"
-        lastnamestatus = false;
+    var lname = document.getElementById("lname").value
+    
+    var letters = /^[-a-zA-Z-()]+(\s+[-a-zA-Z-()]+)*$/;
+    if (lname == "") {
+        document.getElementById("lastnameerror").innerHTML = "This field is required"
+        
+        return false;
     }
-    else if (name.match(letters)) {
-        nameerror.innerHTML = "";
-        lastnamestatus = true;
+    else if (letters.test(lname)) {
+        document.getElementById("lastnameerror").innerHTML = ""
+        return true;
     }
     else {
-        nameerror.innerHTML = "Name is invalid...!!!";
-        lastnamestatus = false;
+        document.getElementById("lastnameerror").innerHTML = "This field is required"
+        return false;
     }
 }
 function emailvalid() {
@@ -39,15 +41,15 @@ function emailvalid() {
     var letters = /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
     if (email == "" || email == null) {
         emailerror.innerHTML = "Filed is required"
-        emailstatus = false;
+        return false;
     }
     else if (email.match(letters)) {
         emailerror.innerHTML = "";
-        emailstatus = true;
+        return true;
     }
     else {
         emailerror.innerHTML = "invalid email";
-        emailstatus = false;
+        return false;
     }
 
 }
@@ -57,58 +59,18 @@ function phonevalid() {
     const letters = /^\d{10}$/;
     if (phone == "" || phone == null) {
         phoneerror.innerHTML = "Filed is required...!!!"
-        phonestatus = false;
+        return false;
     }
     else if (phone.match(letters)) {
         phoneerror.innerHTML = "";
-        phone  = true;
+        return true;
     }
     else {
         phoneerror.innerHTML = "Number is invalid...!!!";
-        phonestatus = false;
+        return false;
     }
 
 }
 
-function messagevalid() {
-    var message = document.getElementById("message").value
-    var messageerror = document.getElementById("messageerror");
-
-    if (message == " " || message ==null) {
-        messageerror.innerHTML = "Filed is required...!!!"
-        messagestatus = false;
-    }
 
 
-    else {
-        messageerror.innerHTML = "";
-        messagestatus = true;
-    }
-
-}
-$("#submit-form").submit((e)=>{
-   
-    e.preventDefault()
-  
-
-    if( msg ==true&& realname==true && email==true && phoneStatus==true){
-    $.ajax({
-        url:"https://script.google.com/macros/s/AKfycby_ZnPvUREK43swDxC6ucBxp9v1QLirqnrrv18AzgK-R6nCyyI65yya3oQ7AxgHlS3iLA/exec",
-        data:$("#submit-form").serialize(),
-        method:"post",
-        success:function (response){
-            alert("Form submitted successfully")
-            window.location.reload()
-            
-        },
-        error:function (err){
-            alert("Error")
-
-        }
-    })
-   }
-   else
-   {
-       alert("Error")
-   }
-})
