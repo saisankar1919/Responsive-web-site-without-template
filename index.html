@@ -191,32 +191,32 @@
        <div class="row">
            <div class="input-box col-12 col-md-6" style="padding-bottom: 0.75cm;">
               
-            <input onkeyup="firstnamevalid()" required id="fname" name="firstname" type="text" class="text-box form-control" placeholder="First name" /> 
+            <input onkeyup="firstnamevalid()" id="fname" name="firstname" type="text" class="text-box form-control" placeholder="First name" /> 
             <p class="valid mt-2"style="color:red;" id="firstnameerror"></p> 
           </div>
            <div class="input-box col-12 col-md-6"style="padding-bottom: 0.75cm;">
            
-            <input onkeyup="lastnamevalid()" required id="lname" name="lasttname" type="text" class="text-box form-control" placeholder="Lastst name" /> 
+            <input onkeyup="lastnamevalid()" id="lname" name="lasttname" type="text" class="text-box form-control" placeholder="Lastst name" /> 
             <p class="valid mt-2"style="color:red;" id="lastnameerror"></p>
           </div>
        </div>
        <div class="row">
         <div class="input-box col-12 col-md-6"style="padding-bottom: 0.75cm;">
            
-         <input onkeyup="emailvalid()" required id="email" name="email" type="text" class="text-box form-control" placeholder="Email Id" /> 
+         <input onkeyup="emailvalid()" id="email" name="email" type="text" class="text-box form-control" placeholder="Email Id" /> 
          <p class="valid mt-2"style="color:red;" id="emailerror"></p>
         </div>
         <div class="input-box col-12 col-md-6"style="padding-bottom: 0.75cm;">
             
-         <input onkeyup="phonevalid()" required id="phone" name="phone" type="text" class="text-box form-control" placeholder="Phone" /> 
+         <input onkeyup="phonevalid()" id="phone" name="phone" type="text" class="text-box form-control" placeholder="Phone" /> 
          <p class="valid mt-2"style="color:red;" id="phoneerror"></p> 
         </div>
         </div>
         <div class="row"style="padding-bottom: 0.75cm;">
             <div class="input-box col-12 col-md-12">
              
-             <textarea onkeyup="messagevalid()" required id="message" name="message" rows="6" class="text-box form-control" placeholder="Let me know how can I help you?"></textarea>
-             <p class="valid mt-2"style="color:red;" id="messageerror"></p> 
+             <textarea onkeyup="messagevalid()" id="message" name="message" rows="6" class="text-box form-control" placeholder="Let me know how can I help you?"></textarea>
+            
             </div>
           </div> 
           <div class="col pull-left"> <button class="btn btn-success mt-2 px-5" style="color: black;background-color: lightseagreen;">Send Message</button> </div>
@@ -261,7 +261,32 @@
     
 
     <script>
-      
+      $("#submit-form").submit((e)=>{
+   
+   e.preventDefault()
+ 
+
+   if( firstnamevalid() ==true&& lastnamevalid()==true && emailvalid()==true && phonevalid()==true){
+   $.ajax({
+       url:"https://script.google.com/macros/s/AKfycby_ZnPvUREK43swDxC6ucBxp9v1QLirqnrrv18AzgK-R6nCyyI65yya3oQ7AxgHlS3iLA/exec",
+       data:$("#submit-form").serialize(),
+       method:"post",
+       success:function (response){
+           alert("Form submitted successfully")
+           window.location.reload()
+           
+       },
+       error:function (err){
+           alert("Error")
+
+       }
+   })
+  }
+  else
+  {
+      alert("Error")
+  }
+})
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </div>
