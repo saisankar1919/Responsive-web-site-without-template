@@ -36,17 +36,18 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <header id="home">
-        <div class="home row text-white">
+      
+        <div class="navbar-nav home text-white sticky-top" style="position: fixed;background-color: black;">
             
             <div class="col-md-12 col-3 my-auto overlay" >            
-              <nav class="navbar navbar-expand-lg navbar-light">
+              <nav class="navbar navbar-expand-lg ">
             
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
           
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ml-auto" style="padding-top: 1cm;">
+              <ul class="navbar-nav ml-auto" style="padding-top: 0.25cm;padding-left: 18cm;">
                 <li class="nav-item active">
                   <a class="nav-link text-white " style="font-family: Allura;font-size: x-large; margin-right:0.5cm ;" href="#home">Home <span class="sr-only">(current)</span></a>
                 </li> 
@@ -66,6 +67,7 @@
           </nav>
           </div>
         </div>
+      
     </header>
     <section id="home" style="overflow-x: hidden;">
         <div class="row container">
@@ -130,7 +132,7 @@
                   <div class="col-2 text-center bottom d-inline-flex justify-content-center align-items-center">
                     <div class="circle font-weight-bold" style="color: black;">2016</div>
                   </div>
-                  <div class="col-9">
+                  <div class="col-9" style="color: whitesmoke;">
                     <h5>Smart Street Lighting</h5>
                     <p>The system will provide the feature to the street lights to automatically controll the intensity of the light according to the vehicle and human or animal presence</p>
                   </div>
@@ -149,7 +151,7 @@
                 </div>
                 
                 <div class="row align-items-center justify-content-end how-it-works d-flex">
-                  <div class="col-9 text-right">
+                  <div class="col-9 text-right"style="color: whitesmoke;">
                     <h5>Smart Energy Meter</h5>
                     <p>Next generation energy meter for domestic use, that can track two way power flow. The device will also shows all time consumption of power and helps to analyse it. </p>
                   </div>
@@ -174,7 +176,7 @@
                   <div class="col-2 text-center top d-inline-flex justify-content-center align-items-center">
                     <div class="circle font-weight-bold"style="color: black;">2019</div>
                   </div>
-                  <div class="col-9">
+                  <div class="col-9"style="color:whitesmoke;">
                     <h5>Smart Braille Reader</h5>
                     <p>An integrated device for visually impired people to communicate with the computer or mobile devices. The device will convert the text file into braille code and providing to the users through vaibrations to there finger tips</p>
                     </div>
@@ -208,14 +210,14 @@
         </div>
         <div class="input-box col-12 col-md-6"style="padding-bottom: 0.75cm;">
             
-         <input onkeyup="phonevalid()" id="phone" name="phone" type="text" class="text-box form-control" placeholder="Phone" /> 
+         <input onkeyup="phonevalid()" id="phone" pattern="[0-9]+" name="phone" type="text" class="text-box form-control" placeholder="Phone" /> 
          <p class="valid mt-2"style="color:red;" id="phoneerror"></p> 
         </div>
         </div>
         <div class="row"style="padding-bottom: 0.75cm;">
             <div class="input-box col-12 col-md-12">
              
-             <textarea onkeyup="messagevalid()" id="message" name="message" rows="6" class="text-box form-control" placeholder="Let me know how can I help you?"></textarea>
+             <textarea id="message" name="message" rows="6" class="text-box form-control" placeholder="Let me know how can I help you?"></textarea>
             
             </div>
           </div> 
@@ -249,11 +251,11 @@
         <p>Ⓒ Copyright 2021 | Saisankar | All Rights Reserved</p>
       </div>
       <div class="icon" style="text-align: center;">
-      <a href="#https://l.facebook.com/l.php?u=https%3A%2F%2Ftwitter.com%2FSaisankar%3Ffbclid%3DIwAR1XT8Q4qcH_twyundnclpw2PDNXHDAKKNnFkEu_LJtEUU7zecN5BU2qY50&h=AT0G2Wry-KjnDl9p46b5s-OGzRDfzrR0pbn0xLdzkNnH8sKxs_LalAf2s1vl-00kHNiLQLx86jvjQhSRjXwKa7dpWfuJO1-j13LOwp3rGLll8e4a8DEPcN_vnJNT" target="_blank" class="social fa fa-facebook" style="font-size: 25px;"></a>
-      <a href="#https://www.linkedin.com/in/saisankar-s-r-896a39150?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BObxd6%2BQ2TUmHUIjrM0eF%2Bg%3D%3D" target="_blank" class="social fa fa-linkedin" style="font-size: 25px;"></a>
-      <a href="#https://github.com/saisankar1919" target="_blank" class="social fa fa-github" style="font-size: 25px;"></a>
-      <a href="#https://www.instagram.com/invites/contact/?i=14fkm1kkx01s2&utm_content=3qojcza" target="_blank" class="social fa fa-instagram" style="font-size: 25px;"></a>
-     
+      <a href="#https://l.facebook.com/l.php?u=https%3A%2F%2Ftwitter.com%2FSaisankar%3Ffbclid%3DIwAR1XT8Q4qcH_twyundnclpw2PDNXHDAKKNnFkEu_LJtEUU7zecN5BU2qY50&h=AT0G2Wry-KjnDl9p46b5s-OGzRDfzrR0pbn0xLdzkNnH8sKxs_LalAf2s1vl-00kHNiLQLx86jvjQhSRjXwKa7dpWfuJO1-j13LOwp3rGLll8e4a8DEPcN_vnJNT" class="social fa fa-facebook" style="font-size: 25px;"></a>
+      <a href="#https://www.linkedin.com/in/saisankar-s-r-896a39150?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BObxd6%2BQ2TUmHUIjrM0eF%2Bg%3D%3D" class="social fa fa-linkedin" style="font-size: 25px;"></a>
+      <a href="#https://github.com/saisankar1919" class="social fa fa-github" style="font-size: 25px;"></a>
+      <a href="#https://www.instagram.com/invites/contact/?i=14fkm1kkx01s2&utm_content=3qojcza" class="social fa fa-instagram" style="font-size: 25px;"></a>
+      
       </div>
     
     
